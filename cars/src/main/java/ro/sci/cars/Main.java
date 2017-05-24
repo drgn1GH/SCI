@@ -7,6 +7,16 @@ import ro.sci.cars.util.FuelType;
  */
 public class Main {
 
+
+
+    //added some spaces under main
+
+
+
+
+
+
+
     public static void main(String[] args) {
 
         Vehicle car = new Car(10, FuelType.DIESEL, 60, 6, 4.5);
