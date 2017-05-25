@@ -9,6 +9,10 @@ public class RentalCalendar{
     private double returnTime;
     private double price;
 
+    //added some spaces
+
+
+
 
     public RentalCalendar(boolean drivingLicence, double price, double pickupTime) {
         this.drivingLicence = drivingLicence;
