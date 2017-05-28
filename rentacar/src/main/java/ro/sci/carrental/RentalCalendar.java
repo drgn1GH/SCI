@@ -1,4 +1,4 @@
-package ro.sci.carrental.model;
+package ro.sci.carrental;
 
 /**
  * Created by tudor on 24.05.2017.

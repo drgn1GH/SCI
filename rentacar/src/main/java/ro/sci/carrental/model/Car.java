@@ -1,29 +1,64 @@
 package ro.sci.carrental.model;
 
+import ro.sci.carrental.util.FuelType;
+import ro.sci.carrental.util.VehicleCategory;
+
 /**
+ * Create a car object blueprint
  * Created by tudor on 24.05.2017.
+ * @version 1.1
  */
 public class Car {
+    private FuelType fuelType;
+    private VehicleCategory vehicleCategory;
     private String make;
     private String model;
-    private String fuelType;
     private String color;
-    private String category;
+    private float size;
     private int numberOfSeats;
     private int numberOfDoors;
-    private String gearboxType;
+    private boolean gearboxType;
     private boolean AC;
     private boolean gps;
 
-    public Car() {
+    /**
+     * default constructor
+     */
+    public Car(){
+
     }
 
-    public Car(String make, String model, String fuelType, String color, String category, int numberOfSeats, int numberOfDoors, String gearboxType, boolean AC, boolean gps) {
+    /**
+     * constructor with most important fields
+     * @param make
+     * @param model
+     */
+    public Car(String make, String model) {
         this.make = make;
         this.model = model;
+    }
+
+    /**
+     * contructor with all fields
+     * @param fuelType
+     * @param vehicleCategory
+     * @param make
+     * @param model
+     * @param color
+     * @param size
+     * @param numberOfSeats
+     * @param numberOfDoors
+     * @param gearboxType
+     * @param AC
+     * @param gps
+     */
+    public Car(FuelType fuelType, VehicleCategory vehicleCategory, String make, String model, String color, float size, int numberOfSeats, int numberOfDoors, boolean gearboxType, boolean AC, boolean gps) {
         this.fuelType = fuelType;
+        this.vehicleCategory = vehicleCategory;
+        this.make = make;
+        this.model = model;
         this.color = color;
-        this.category = category;
+        this.size = size;
         this.numberOfSeats = numberOfSeats;
         this.numberOfDoors = numberOfDoors;
         this.gearboxType = gearboxType;
@@ -31,19 +66,30 @@ public class Car {
         this.gps = gps;
     }
 
-    public Car(String make, String model, String color) {
-        this.make = make;
-        this.model = model;
-        this.color = color;
-    }
+    /* setters */
 
-
-    public void setFuelType(String fuelType) {
+    public void setFuelType(FuelType fuelType) {
         this.fuelType = fuelType;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setVehicleCategory(VehicleCategory vehicleCategory) {
+        this.vehicleCategory = vehicleCategory;
+    }
+
+    public void setMake(String make) {
+        this.make = make;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public void setSize(float size) {
+        this.size = size;
     }
 
     public void setNumberOfSeats(int numberOfSeats) {
@@ -54,7 +100,7 @@ public class Car {
         this.numberOfDoors = numberOfDoors;
     }
 
-    public void setGearboxType(String gearboxType) {
+    public void setGearboxType(boolean gearboxType) {
         this.gearboxType = gearboxType;
     }
 
@@ -66,6 +112,16 @@ public class Car {
         this.gps = gps;
     }
 
+    /* getters */
+
+    public FuelType getFuelType() {
+        return fuelType;
+    }
+
+    public VehicleCategory getVehicleCategory() {
+        return vehicleCategory;
+    }
+
     public String getMake() {
         return make;
     }
@@ -74,16 +130,12 @@ public class Car {
         return model;
     }
 
-    public String getFuelType() {
-        return fuelType;
-    }
-
     public String getColor() {
         return color;
     }
 
-    public String getCategory() {
-        return category;
+    public float getSize() {
+        return size;
     }
 
     public int getNumberOfSeats() {
@@ -94,7 +146,7 @@ public class Car {
         return numberOfDoors;
     }
 
-    public String getGearboxType() {
+    public boolean isGearboxType() {
         return gearboxType;
     }
 
@@ -103,7 +155,6 @@ public class Car {
     }
 
     public boolean isGps() {
-
         return gps;
     }
 }
