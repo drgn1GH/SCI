@@ -2,9 +2,8 @@ package ro.sci.carrental;
 
 import ro.sci.carrental.model.Car;
 import ro.sci.carrental.repository.CarRepository;
-import ro.sci.carrental.service.SearchService;
-import ro.sci.carrental.util.FuelType;
-import ro.sci.carrental.util.VehicleCategory;
+import ro.sci.carrental.repository.CarRepositoryInterface;
+import ro.sci.carrental.service.CarService;
 
 /**
  * Created by tudor on 18.05.2017.
@@ -22,7 +21,7 @@ public class Main {
 //        rc1.setReturnTime(24.0);
 //        System.out.println(rc1.getReturnTime());
         car1.setColor("red");
-        CarRepository cr = new CarRepository();
+        CarRepositoryInterface cr = new CarRepository();
         cr.addCar(car1);
 
         Car car2 = new Car("Audi", "x6");
@@ -31,7 +30,7 @@ public class Main {
         Car car3 = new Car("bmw","x3");
         cr.addCar(car2);
         cr.addCar(car3);
-        SearchService ss = new SearchService(cr);
+        CarService ss = new CarService(cr);
         ss.findCarByMake("bmw");
         ss.findCarByMake("audi");
         ss.findCarByMakeAndModel("bmw","3x");
