@@ -1,9 +1,15 @@
 package ro.sci.carrental;
 
 import ro.sci.carrental.model.Car;
+import ro.sci.carrental.model.Customer;
+import ro.sci.carrental.model.CustomerAddress;
 import ro.sci.carrental.repository.CarRepository;
 import ro.sci.carrental.repository.CarRepositoryInterface;
+import ro.sci.carrental.repository.CustomerRepository;
+import ro.sci.carrental.repository.CustomerRepositoryInterface;
 import ro.sci.carrental.service.CarService;
+import ro.sci.carrental.service.CustomerService;
+import ro.sci.carrental.service.CustomerServiceInterface;
 
 /**
  * Created by tudor on 18.05.2017.
@@ -39,5 +45,27 @@ public class Main {
         ss.findCarByMakeAndModelAndColor("audi","tt","red");
 
 
+//        Customer customer = new Customer(true,"mihai","0755555555","mihai@gmail.");
+
+        CustomerAddress ca1 = new CustomerAddress("cluj","Str.Lala",33,"0343242");
+        CustomerAddress ca2 = new CustomerAddress("brasov","Str.Hehe",22,"99942");
+        Customer customer1 = new Customer(true,"George","0758766599","george@gmail.com",ca1);
+        Customer customer2 = new Customer(true,"John","0754766599","john@gmail.com",ca2);
+        Customer customer3 = new Customer(false,"John","0754766599","hamham@yahoo.com",ca2);
+
+        System.out.println(ca1.getStreet());
+        System.out.println(customer1.getEmail());
+
+        CustomerRepository cri = new CustomerRepository();
+        cri.add(customer1);
+        cri.add(customer2);
+        cri.add(customer3);
+        System.out.println(cri.getAll());
+
+        CustomerService lala = new CustomerService(cri);
+        lala.findCustomerByDrivingLicence(true);
+
+        lala.findCustomerByName("george");
+        lala.findCustomerByName("john");
     }
 }

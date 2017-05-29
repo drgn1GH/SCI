@@ -17,7 +17,8 @@ public class CarService implements CarServiceInterface {
     public CarService(CarRepositoryInterface carRepositoryInterface){
         this.carRepositoryInterface = carRepositoryInterface;
     }
-public List<Car> findCarByMake(String make){
+
+    public List<Car> findCarByMake(String make){
         List<Car> foundCars = new ArrayList<Car>();
 
         for(Car car : carRepositoryInterface.getAll()){
