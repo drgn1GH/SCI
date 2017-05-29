@@ -1,7 +1,6 @@
 package ro.sci.carrental.service;
 
 import ro.sci.carrental.model.Customer;
-import ro.sci.carrental.model.CustomerAddress;
 import ro.sci.carrental.repository.CustomerRepository;
 
 import java.util.ArrayList;
