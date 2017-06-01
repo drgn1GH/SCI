@@ -7,8 +7,9 @@ import java.util.List;
 
 /**
  * Created by tudor on 29.05.2017.
+ * Create a CarRepository object blueprint
  */
-public class CarRepository {
+public class CarRepository implements CarRepositoryInterface {
     private List<Car> cars;
 
     public CarRepository(){
@@ -27,7 +28,7 @@ public class CarRepository {
         cars.set(cars.indexOf(car),car);
     }
 
-    public List<Car> getCars() {
+    public List<Car> getAll() {
         return cars;
     }
 }
