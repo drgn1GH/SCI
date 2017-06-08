@@ -154,7 +154,7 @@ public class Car {
         return AC;
     }
 
-    public boolean isGps() {
+    public boolean hasGps() {
         return gps;
     }
 }

@@ -1,58 +1,20 @@
 package ro.sci.carrental;
 
+import ro.sci.carrental.model.Car;
+import ro.sci.carrental.model.Customer;
+
 /**
  * Created by tudor on 24.05.2017.
  */
-public class RentalCalendar{
-    private boolean drivingLicence;
-    private double pickupTime;
-    private double returnTime;
-    private double price;
+public class RentalCalendar {
 
-    //added some spaces
-
-
-
-
-    public RentalCalendar(boolean drivingLicence, double price, double pickupTime) {
-        this.drivingLicence = drivingLicence;
-        this.price = price;
-        this.pickupTime = pickupTime;
+    public void pickupTime(Car car, Customer customer, String date) {
+        System.out.printf("Car : %s %s will be picked up by customer : %s, on %s.%n", car.getMake(), car.getModel(),customer.getName(), date);
     }
 
-    public double getReturnTime() {
-        return returnTime;
-    }
+    public void returnTime(Car car, Customer customer, String date) {
+        System.out.printf("Car : %s %s will be returned by customer : %s, until %s.%n", car.getMake(), car.getModel(),  customer.getName(), date);
 
-    public RentalCalendar() {
-    }
-
-    public void setReturnTime(double returnTime) {
-        this.returnTime = returnTime;
-    }
-
-    public boolean isDrivingLicence() {
-        return drivingLicence;
-    }
-
-    public void setDrivingLicence(boolean drivingLicence) {
-        this.drivingLicence = drivingLicence;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public double getPickupTime() {
-        return pickupTime;
-    }
-
-    public void setPickupTime(double pickupTime) {
-        this.pickupTime = pickupTime;
     }
 
 }
