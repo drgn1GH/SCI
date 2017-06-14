@@ -3,7 +3,6 @@ package ro.sci.carrental.model.car;
 /**
  * Create a car object blueprint
  * Created by tudor on 24.05.2017
- * gitignore
  */
 public class Car {
     private FuelType fuelType;
