@@ -1,6 +1,6 @@
 package ro.sci.carrental.service;
 
-import ro.sci.carrental.model.Customer;
+import ro.sci.carrental.model.customer.Customer;
 
 import java.util.List;
 
@@ -10,15 +10,16 @@ import java.util.List;
 public interface CustomerServiceInterface {
     /**
      * Find the customers with driving licence
-     * @param drivingLicence Customer driving licence
-     * @return List<Customer>
+     *
+     * @return retrieve Customer Repository List<Customer>
      */
-    List<Customer> findCustomerByDrivingLicence(boolean drivingLicence);
+    List<Customer> findCustomerByDrivingLicence();
 
     /**
      * Find the customer by name
+     *
      * @param name Customer's name
-     * @return List<Customer>
+     * @return retrieve Customer Repository List<Customer>
      */
     List<Customer> findCustomerByName(String name);
 }
