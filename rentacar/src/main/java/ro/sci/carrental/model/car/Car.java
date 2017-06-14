@@ -2,6 +2,7 @@ package ro.sci.carrental.model.car;
 
 /**
  * Create a car object blueprint
+ * ignore iml
  * Created by tudor on 24.05.2017
  */
 public class Car {
