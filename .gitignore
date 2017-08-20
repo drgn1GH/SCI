@@ -1,2 +1,8 @@
 *.class
 .idea
+*.iml
+*.iws
+*.xml
+
+!README.md
+\!pom.xml

@@ -1,9 +1,8 @@
 package ro.sci.carrental.service;
 
-import ro.sci.carrental.model.Car;
+import ro.sci.carrental.model.car.Car;
 import ro.sci.carrental.repository.CarRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,46 +13,32 @@ import java.util.List;
 public class CarService implements CarServiceInterface {
     private CarRepository carRepository;
 
-    public CarService(CarRepository carRepository){
+    public CarService(CarRepository carRepository) {
         this.carRepository = carRepository;
     }
 
-    public List<Car> findCarByMake(String make){
-        List<Car> foundCars = new ArrayList<Car>();
-
-        for(Car car : carRepository.getAll()){
-            if (car.getMake().equalsIgnoreCase(make)){
-                foundCars.add(car);
-                System.out.println(car.getMake()+ " "+ car.getModel()+ " " + car.getColor());
-
-            }
+    public List<Car> findCarByMake(String make) {
+        if (null == make || make.isEmpty()) {
+            System.out.println("one of the parameters are empty string");
+            return null;
         }
-        return foundCars;
+        return carRepository.getCarsByMake(make);
+
     }
 
-    public List<Car> findCarByMakeAndModel(String make, String model){
-        List<Car> foundCars = new ArrayList<Car>();
-
-        for(Car car : carRepository.getAll()){
-            if(car.getMake().equalsIgnoreCase(make) && car.getModel().equalsIgnoreCase(model)){
-                foundCars.add(car);
-                System.out.println(car.getMake()+ " "+ car.getModel()+ " " + car.getColor());
-            }
+    public List<Car> findCarByMakeAndModel(String make, String model) {
+        if (null == make || null == model || make.isEmpty() || model.isEmpty()) {
+            System.out.println("find result is null");
+            return null;
         }
-        return foundCars;
+        return carRepository.getCarsByMakeAndModel(make, model);
     }
 
-    public List<Car> findCarByMakeAndModelAndColor(String make, String model, String color){
-        List<Car> foundCars = new ArrayList<Car>();
-
-        for(Car car :  carRepository.getAll()) {
-            if (car.getMake().equalsIgnoreCase(make) && car.getModel().equalsIgnoreCase(model)
-                    && car.getColor().equalsIgnoreCase(color)) {
-                foundCars.add(car);
-                System.out.println(car.getMake() + " " + car.getModel() + " " + car.getColor());
-            }
+    public List<Car> findCarByMakeAndModelAndColor(String make, String model, String color) {
+        if (null == make || null == model || null == color || make.isEmpty() || model.isEmpty() || color.isEmpty()) {
+            System.out.println("find result is null");
+            return null;
         }
-        return foundCars;
+        return carRepository.getCarsByMakeAndModelAndColor(make, model, color);
     }
-
 }

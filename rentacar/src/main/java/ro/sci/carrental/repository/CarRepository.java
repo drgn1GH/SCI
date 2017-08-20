@@ -1,6 +1,6 @@
 package ro.sci.carrental.repository;
 
-import ro.sci.carrental.model.Car;
+import ro.sci.carrental.model.car.Car;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,20 +12,57 @@ import java.util.List;
 public class CarRepository implements CarRepositoryInterface {
     private List<Car> cars;
 
-    public CarRepository(){
-        this.cars = new ArrayList<Car>();
+    public CarRepository() {
+        this.cars = new ArrayList<>();
     }
 
-    public void addCar(Car car){
+    public List<Car> getCarsByMake(String make) {
+        List<Car> foundCars = new ArrayList<>();
+
+        for (Car car : cars) {
+            if (car.getMake().equalsIgnoreCase(make)) {
+                foundCars.add(car);
+                System.out.println(car);
+            }
+        }
+        return foundCars;
+    }
+
+    public List<Car> getCarsByMakeAndModel(String make, String model) {
+        List<Car> foundCars = new ArrayList<>();
+
+        for (Car car : cars) {
+            if (car.getMake().equalsIgnoreCase(make) && car.getModel().equalsIgnoreCase(model)) {
+                foundCars.add(car);
+                System.out.println(car);
+            }
+        }
+        return foundCars;
+    }
+
+    public List<Car> getCarsByMakeAndModelAndColor(String make, String model, String color) {
+        List<Car> foundCars = new ArrayList<>();
+
+        for (Car car : cars) {
+            if (car.getMake().equalsIgnoreCase(make) && car.getModel().equalsIgnoreCase(model)
+                    && car.getColor().equalsIgnoreCase(color)) {
+                foundCars.add(car);
+                System.out.println(car);
+            }
+        }
+        return foundCars;
+    }
+
+    public void addCar(Car car) {
         cars.add(car);
     }
 
-    public void removeCar(Car car){
+    public void removeCar(Car car) {
         cars.remove(car);
     }
 
-    public void updateCar(Car car){
-        cars.set(cars.indexOf(car),car);
+    public void updateCar(Car car) {
+        cars.set(cars.indexOf(car), car);
     }
 
     public List<Car> getAll() {
