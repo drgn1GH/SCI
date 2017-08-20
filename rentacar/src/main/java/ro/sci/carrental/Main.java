@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         Car car1 = new Car("Audi", "TT");
         Car car2 = new Car("Audi", "x6");
-        Car car3 = new Car("BMW","x3");
+        Car car3 = new Car("BMW", "x3");
         car1.setColor("red");
         car2.setColor("blue");
         car3.setColor("gold");
@@ -30,18 +30,18 @@ public class Main {
         System.out.printf("%n");
         carService.findCarByMake("audi");
         System.out.printf("%n");
-        carService.findCarByMakeAndModel("bmw","x3");
+        carService.findCarByMakeAndModel("bmw", "x3");
         System.out.printf("%n");
-        carService.findCarByMakeAndModelAndColor("audi","tt","red");
+        carService.findCarByMakeAndModelAndColor("audi", "tt", "red");
         System.out.printf("%n");
 
-        CustomerAddress customerAddress1 = new CustomerAddress("Cluj","Str.Lala",33,"0343242");
-        CustomerAddress customerAddress2 = new CustomerAddress("Brasov","Str.Hehe",22,"99942");
-        CustomerAddress customerAddress3 = new CustomerAddress("Arad","Str.Ciresului",11,"66625");
+        CustomerAddress customerAddress1 = new CustomerAddress("Cluj", "Str.Lala", 33, "0343242");
+        CustomerAddress customerAddress2 = new CustomerAddress("Brasov", "Str.Hehe", 22, "99942");
+        CustomerAddress customerAddress3 = new CustomerAddress("Arad", "Str.Ciresului", 11, "66625");
 
-        Customer customer1 = new Customer(true,"George","0758766599","george@gmail.com",customerAddress1);
-        Customer customer2 = new Customer(true,"John","0754766599","john@gmail.com",customerAddress2);
-        Customer customer3 = new Customer(false,"John","0754766599","hamham@yahoo.com",customerAddress3);
+        Customer customer1 = new Customer(true, "George", "0758766599", "george@gmail.com", customerAddress1);
+        Customer customer2 = new Customer(true, "John", "0754766599", "john@gmail.com", customerAddress2);
+        Customer customer3 = new Customer(false, "John", "0754776599", "johhny@yahoo.com", customerAddress3);
 
         CustomerRepository customerRepository1 = new CustomerRepository();
         customerRepository1.add(customer1);
@@ -54,5 +54,13 @@ public class Main {
         customerService1.findCustomerByName("george");
         System.out.printf("%n");
         customerService1.findCustomerByName("john");
+        System.out.printf("%n");
+
+
+        RentalCalendar rentalCalendar = new RentalCalendar();
+        rentalCalendar.pickupTime(car1,customer1,"24.03.2017 15:00:59");
+        rentalCalendar.returnTime(car1,customer1,"27.03.2017 15:00:59");
+
+
     }
 }
