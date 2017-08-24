@@ -17,20 +17,13 @@ public class Car {
     private boolean gearboxType;
     private boolean AC;
     private boolean gps;
+    private Price price;
 
-    /**
-     * default constructor
-     */
+
     public Car() {
 
     }
 
-    /**
-     * constructor with the most important fields
-     *
-     * @param make
-     * @param model
-     */
     public Car(String make, String model) {
         this.make = make;
         this.model = model;
@@ -126,6 +119,19 @@ public class Car {
         return gps;
     }
 
+    public boolean isGps() {
+        return gps;
+    }
+
+    public Price getPrice() {
+        return price;
+    }
+
+    public void setPrice(Price price) {
+        this.price = price;
+    }
+
+
     @Override
     public String toString() {
         return "Car{" +
@@ -140,6 +146,7 @@ public class Car {
                 ", gearboxType=" + gearboxType +
                 ", AC=" + AC +
                 ", gps=" + gps +
+                ", price=" + price +
                 '}';
     }
 }

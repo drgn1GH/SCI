@@ -37,7 +37,6 @@ public class Transaction {
 
     }
 
-    // unique ids , different ids could have same name
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

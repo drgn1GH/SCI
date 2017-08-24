@@ -1,9 +1,11 @@
 package ro.sci.carrental;
 
 import ro.sci.carrental.model.calendar.RentalCalendar;
+import ro.sci.carrental.model.calendar.RentingPrice;
 import ro.sci.carrental.model.calendar.Transaction;
 import ro.sci.carrental.model.car.Car;
 import ro.sci.carrental.model.car.FuelType;
+import ro.sci.carrental.model.car.Price;
 import ro.sci.carrental.model.customer.Customer;
 import ro.sci.carrental.model.customer.CustomerAddress;
 import ro.sci.carrental.repository.CarRepository;
@@ -22,10 +24,20 @@ public class Main {
         Car car2 = new Car("Audi", "x6");
         Car car3 = new Car("BMW", "x3");
         Car car4 = new Car("Dacia", "Logan");
+        car1.setPrice(new Price(9,"\u00a3"));
+        car2.setPrice(new Price(30,"\u20ac"));
+        car3.setPrice(new Price(24,"$"));
+        car4.setPrice(new Price(33,"RON"));
         car1.setColor("red");
         car2.setColor("blue");
         car3.setColor("gold");
         car1.setFuelType(FuelType.PETROL);
+        System.out.println(car1.getPrice());
+        RentingPrice rp1 = new RentingPrice(car1,3);
+        RentingPrice rp2 = new RentingPrice(car2,3);
+        RentingPrice rp3 = new RentingPrice(car1,3);
+
+
 
         CarRepository cr = new CarRepository();
         cr.addCar(car1);

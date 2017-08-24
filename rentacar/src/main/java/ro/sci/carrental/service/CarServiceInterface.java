@@ -1,6 +1,6 @@
 package ro.sci.carrental.service;
 
-import ro.sci.carrental.model.car.Car;
+import ro.sci.carrental.repository.CarRepositoryInterface;
 
 import java.util.List;
 
@@ -9,14 +9,14 @@ import java.util.List;
  * Interface of CarServicegit
  */
 
-public interface CarServiceInterface {
+public interface CarServiceInterface<T extends CarRepositoryInterface> {
     /**
      * Find same make cars in system.
      *
      * @param make Car make
      * @return retrieve CarRepository List<Car>
      */
-    List<Car> findCarByMake(String make);
+    List<T> findCarByMake(String make);
 
     /**
      * Find same make and model cars in system.
@@ -25,7 +25,7 @@ public interface CarServiceInterface {
      * @param model Car model
      * @return retrieve CarRepository List<Car>
      */
-    List<Car> findCarByMakeAndModel(String make, String model);
+    List<T> findCarByMakeAndModel(String make, String model);
 
     /**
      * Find same make,model and color cars in system.
@@ -35,5 +35,5 @@ public interface CarServiceInterface {
      * @param color Car color
      * @return retrieve CarRepository List<Car>
      */
-    List<Car> findCarByMakeAndModelAndColor(String make, String model, String color);
+    List<T> findCarByMakeAndModelAndColor(String make, String model, String color);
 }

@@ -8,7 +8,7 @@ import java.util.List;
  * Created by tudor on 29.05.2017.
  * Interface of CarRepository
  */
-public interface CarRepositoryInterface {
+public interface CarRepositoryInterface<T extends Car> {
 
     /**
      * Find same make cars in system.
@@ -16,7 +16,7 @@ public interface CarRepositoryInterface {
      * @param make Car make
      * @return List<Car>
      */
-    List<Car> getCarsByMake(String make);
+    List<T> getCarsByMake(String make);
 
     /**
      * Find same make and model cars in system.
@@ -25,7 +25,7 @@ public interface CarRepositoryInterface {
      * @param model Car model
      * @return List<Car>
      */
-    List<Car> getCarsByMakeAndModel(String make, String model);
+    List<T> getCarsByMakeAndModel(String make, String model);
 
     /**
      * Find same make,model and color cars in system.
@@ -35,28 +35,28 @@ public interface CarRepositoryInterface {
      * @param color Car color
      * @return List<Car>
      */
-    List<Car> getCarsByMakeAndModelAndColor(String make, String model, String color);
+    List<T> getCarsByMakeAndModelAndColor(String make, String model, String color);
 
     /**
      * Add a car in the system.
      *
      * @param car
      */
-    void addCar(Car car);
+    void addCar(T t);
 
     /**
      * Removes a car from the system.
      *
      * @param car
      */
-    void removeCar(Car car);
+    void removeCar(T t);
 
     /**
      * Updates car information in the system.
      *
      * @param car
      */
-    void updateCar(Car car);
+    void updateCar(T t);
 
     /**
      * Get all cars in the system
