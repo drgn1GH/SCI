@@ -8,6 +8,7 @@ package ro.sci.carrental.model.car;
 public class Car {
     private FuelType fuelType;
     private VehicleCategory vehicleCategory;
+    private Gearbox gearbox;
     private String make;
     private String model;
     private String color;
@@ -18,6 +19,7 @@ public class Car {
     private boolean AC;
     private boolean gps;
     private Price price;
+
 
 
     public Car() {
@@ -131,6 +133,13 @@ public class Car {
         this.price = price;
     }
 
+    public Gearbox getGearbox() {
+        return gearbox;
+    }
+
+    public void setGearbox(Gearbox gearbox) {
+        this.gearbox = gearbox;
+    }
 
     @Override
     public String toString() {

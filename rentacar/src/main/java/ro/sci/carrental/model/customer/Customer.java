@@ -11,25 +11,13 @@ public class Customer {
     private String email;
     private CustomerAddress customerAddress;
 
-    /**
-     * default constructor
-     */
     public Customer() {
     }
 
-    /**
-     * constructor with the most important fields
-     *
-     * @param drivingLicence
-     * @param name
-     */
     public Customer(boolean drivingLicence, String name) {
         this.drivingLicence = drivingLicence;
         this.name = name;
     }
-
-
-    //setters
 
     public void setDrivingLicence(boolean drivingLicence) {
         this.drivingLicence = drivingLicence;
@@ -50,8 +38,6 @@ public class Customer {
     public String getMobile() {
         return mobile;
     }
-
-    //getters
 
     public void setMobile(String mobile) {
         this.mobile = mobile;

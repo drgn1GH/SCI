@@ -4,12 +4,16 @@ import ro.sci.carrental.model.car.Car;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by tudor on 29.05.2017.
  * Create a CarRepository object blueprint
  */
 public class CarRepository implements CarRepositoryInterface {
+    private static final Logger logger = Logger.getLogger(CarRepository.class.getName());
+
     private List<Car> cars;
 
     public CarRepository() {
@@ -22,7 +26,7 @@ public class CarRepository implements CarRepositoryInterface {
         for (Car car : cars) {
             if (car.getMake().equalsIgnoreCase(make)) {
                 foundCars.add(car);
-                System.out.println(car);
+                logger.log(Level.INFO,"the found cars by model are :\n" +car +"\n");
             }
         }
         return foundCars;
@@ -34,7 +38,7 @@ public class CarRepository implements CarRepositoryInterface {
         for (Car car : cars) {
             if (car.getMake().equalsIgnoreCase(make) && car.getModel().equalsIgnoreCase(model)) {
                 foundCars.add(car);
-                System.out.println(car);
+                logger.log(Level.INFO,"the found cars by make and model are :" +car +"\n");
             }
         }
         return foundCars;
@@ -47,7 +51,7 @@ public class CarRepository implements CarRepositoryInterface {
             if (car.getMake().equalsIgnoreCase(make) && car.getModel().equalsIgnoreCase(model)
                     && car.getColor().equalsIgnoreCase(color)) {
                 foundCars.add(car);
-                System.out.println(car);
+                logger.log(Level.INFO,"the found cars by make ,model and color  are :" +car +"\n");
             }
         }
         return foundCars;

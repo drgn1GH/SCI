@@ -4,6 +4,8 @@ import ro.sci.carrental.model.car.Car;
 import ro.sci.carrental.repository.CarRepository;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by tudor on 29.05.2017.
@@ -11,6 +13,8 @@ import java.util.List;
  * Create a CarService object blueprint
  */
 public class CarService implements CarServiceInterface {
+    private static final Logger logger = Logger.getLogger(CarService.class.getName());
+
     private CarRepository carRepository;
 
     public CarService(CarRepository carRepository) {
@@ -19,7 +23,7 @@ public class CarService implements CarServiceInterface {
 
     public List<Car> findCarByMake(String make) {
         if (null == make || make.isEmpty()) {
-            System.out.println("one of the parameters are empty string");
+            logger.log(Level.INFO,"one of the parameters are empty string");
             return null;
         }
         return carRepository.getCarsByMake(make);
@@ -28,7 +32,7 @@ public class CarService implements CarServiceInterface {
 
     public List<Car> findCarByMakeAndModel(String make, String model) {
         if (null == make || null == model || make.isEmpty() || model.isEmpty()) {
-            System.out.println("find result is null");
+            logger.log(Level.INFO,"find result is null");
             return null;
         }
         return carRepository.getCarsByMakeAndModel(make, model);
@@ -36,9 +40,13 @@ public class CarService implements CarServiceInterface {
 
     public List<Car> findCarByMakeAndModelAndColor(String make, String model, String color) {
         if (null == make || null == model || null == color || make.isEmpty() || model.isEmpty() || color.isEmpty()) {
-            System.out.println("find result is null");
+            logger.log(Level.INFO,"find result is null");
             return null;
         }
         return carRepository.getCarsByMakeAndModelAndColor(make, model, color);
+    }
+
+    public CarRepository getCarRepository() {
+        return carRepository;
     }
 }
