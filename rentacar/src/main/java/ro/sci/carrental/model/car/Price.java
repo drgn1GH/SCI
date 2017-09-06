@@ -4,16 +4,12 @@ public class Price {
     private double hirePrice = 0;
     private String coin;
 
-
-    public Price(){}
-
     public Price(double hirePrice, String coin) {
         if (hirePrice > 0){
             this.hirePrice = hirePrice;
         }
         this.coin = coin;
     }
-
 
     public double getHirePrice() {
         return hirePrice;

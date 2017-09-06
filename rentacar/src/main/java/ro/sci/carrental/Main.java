@@ -47,10 +47,10 @@ public class Main {
 
 
         CarRepository cr = new CarRepository();
-        cr.addCar(car1);
-        cr.addCar(car2);
-        cr.addCar(car3);
-        cr.addCar(car4);
+        cr.add(car1);
+        cr.add(car2);
+        cr.add(car3);
+        cr.add(car4);
 
         CarService carService = new CarService(cr);
         carService.findCarByMake("bmw");

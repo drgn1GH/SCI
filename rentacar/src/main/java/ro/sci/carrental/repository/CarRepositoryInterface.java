@@ -42,21 +42,21 @@ public interface CarRepositoryInterface<T extends Car> {
      *
      * @param car
      */
-    void addCar(T t);
+    void add(T t);
 
     /**
      * Removes a car from the system.
      *
      * @param car
      */
-    void removeCar(T t);
+    void remove(T t);
 
     /**
      * Updates car information in the system.
      *
      * @param car
      */
-    void updateCar(T t);
+    void update(T t);
 
     /**
      * Get all cars in the system

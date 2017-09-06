@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * Created by tudor on 29.05.2017.
  * Create a CarRepository object blueprint
  */
-public class CarRepository implements CarRepositoryInterface {
+public class CarRepository implements CarRepositoryInterface{
     private static final Logger logger = Logger.getLogger(CarRepository.class.getName());
 
     private List<Car> cars;
@@ -57,15 +57,15 @@ public class CarRepository implements CarRepositoryInterface {
         return foundCars;
     }
 
-    public void addCar(Car car) {
+    public void add(Car car) {
         cars.add(car);
     }
 
-    public void removeCar(Car car) {
+    public void remove(Car car) {
         cars.remove(car);
     }
 
-    public void updateCar(Car car) {
+    public void update(Car car) {
         cars.set(cars.indexOf(car), car);
     }
 

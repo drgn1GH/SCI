@@ -19,8 +19,25 @@ public class Car {
     private boolean AC;
     private boolean gps;
     private Price price;
+    private int id;
+    private boolean reserved;
 
 
+    public boolean isReserved() {
+        return reserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Car() {
 
@@ -30,6 +47,8 @@ public class Car {
         this.make = make;
         this.model = model;
     }
+
+
 
     public void setGps(boolean gps) {
         this.gps = gps;

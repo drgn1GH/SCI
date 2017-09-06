@@ -33,7 +33,6 @@ public class CustomerRepository implements CustomerRepositoryInterface {
 
     public List<Customer> findCustomerByName(String name) {
         List<Customer> foundCustomer = new ArrayList<>();
-
         for (Customer customer : customers) {
             if (customer.getName().equalsIgnoreCase(name)) {
                 foundCustomer.add(customer);
@@ -42,7 +41,6 @@ public class CustomerRepository implements CustomerRepositoryInterface {
         }
         return foundCustomer;
     }
-
 
     public void add(Customer customer) {
         customers.add(customer);
