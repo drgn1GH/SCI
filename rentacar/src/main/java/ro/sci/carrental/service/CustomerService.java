@@ -1,42 +1,36 @@
 package ro.sci.carrental.service;
 
-import ro.sci.carrental.model.Customer;
+import ro.sci.carrental.model.customer.Customer;
 import ro.sci.carrental.repository.CustomerRepository;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
+ * Create a customer service object blueprint
  * Created by tudor on 29.05.2017.
  */
 public class CustomerService implements CustomerServiceInterface {
+    private static final Logger logger = Logger.getLogger(CustomerService.class.getName());
+
     private CustomerRepository customerRepository;
 
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
 
     }
-public List<Customer> findCustomerByDrivingLicence(boolean drivingLicence) {
-        List<Customer> foundCustomer = new ArrayList<Customer>();
 
-        for (Customer customer : customerRepository.getAll()) {
-            if (customer.isDrivingLicence()) {
-                foundCustomer.add(customer);
-                System.out.println(customer.getName() + " " + customer.getEmail());
-            }
-        }
-        return foundCustomer;
+    public List<Customer> findCustomerByDrivingLicence() {
+        return customerRepository.findCustomerByDrivingLicence();
     }
 
     public List<Customer> findCustomerByName(String name) {
-        List<Customer> foundCustomer = new ArrayList<Customer>();
-
-        for (Customer customer : customerRepository.getAll()) {
-            if (customer.getName().equalsIgnoreCase(name)) {
-                foundCustomer.add(customer);
-                System.out.println(customer.getName() +" " +customer.getEmail());
-            }
+        if (null == name || name.isEmpty()) {
+            logger.log(Level.INFO,"find result is null");
+            return null;
         }
-        return foundCustomer;
+        return customerRepository.findCustomerByName(name);
     }
+
 }

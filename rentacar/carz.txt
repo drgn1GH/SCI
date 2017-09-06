@@ -1,0 +1,4 @@
+Car{fuelType=null, vehicleCategory=null, make='Audi', model='TT', color='red', size=0.0, numberOfSeats=0, numberOfDoors=0, gearboxType=false, AC=false, gps=false, price=null}
+Car{fuelType=null, vehicleCategory=null, make='Audi', model='x6', color='blue', size=0.0, numberOfSeats=0, numberOfDoors=0, gearboxType=false, AC=false, gps=false, price=null}
+Car{fuelType=null, vehicleCategory=null, make='BMW', model='x3', color='gold', size=0.0, numberOfSeats=0, numberOfDoors=0, gearboxType=false, AC=false, gps=false, price=null}
+Car{fuelType=null, vehicleCategory=null, make='Dacia', model='Logan', color='null', size=0.0, numberOfSeats=0, numberOfDoors=0, gearboxType=false, AC=false, gps=false, price=null}
