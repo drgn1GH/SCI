@@ -5,6 +5,7 @@ package ro.sci.carrental.model.customer;
  * Create a customer object blueprint
  */
 public class Customer {
+    private int id;
     private boolean drivingLicence;
     private String name;
     private String mobile;
@@ -17,6 +18,18 @@ public class Customer {
     public Customer(boolean drivingLicence, String name) {
         this.drivingLicence = drivingLicence;
         this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public boolean isDrivingLicence() {
+        return drivingLicence;
     }
 
     public void setDrivingLicence(boolean drivingLicence) {

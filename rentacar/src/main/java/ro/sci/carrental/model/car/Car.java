@@ -6,6 +6,7 @@ package ro.sci.carrental.model.car;
  * Created by tudor on 24.05.2017
  */
 public class Car {
+    private int id;
     private FuelType fuelType;
     private VehicleCategory vehicleCategory;
     private Gearbox gearbox;
@@ -14,14 +15,52 @@ public class Car {
     private String color;
     private float size;
     private int numberOfSeats;
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", fuelType=" + fuelType +
+                ", vehicleCategory=" + vehicleCategory +
+                ", gearbox=" + gearbox +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", size=" + size +
+                ", numberOfSeats=" + numberOfSeats +
+                ", numberOfDoors=" + numberOfDoors +
+                ", gearboxType=" + gearboxType +
+                ", AC=" + AC +
+                ", gps=" + gps +
+                ", price=" + price +
+                ", reserved=" + reserved +
+                '}';
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private int numberOfDoors;
     private boolean gearboxType;
     private boolean AC;
     private boolean gps;
     private Price price;
-    private int id;
     private boolean reserved;
 
+    public Car(int id, String make, String model, String color) {
+        this.id = id;
+        this.make = make;
+        this.model = model;
+        this.color = color;
+    }
+
+    public Car(String make, String model) {
+        this.make = make;
+        this.model = model;
+    }
+
+    public Car(){};
 
     public boolean isReserved() {
         return reserved;
@@ -34,20 +73,6 @@ public class Car {
     public int getId() {
         return id;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Car() {
-
-    }
-
-    public Car(String make, String model) {
-        this.make = make;
-        this.model = model;
-    }
-
 
 
     public void setGps(boolean gps) {
@@ -161,20 +186,17 @@ public class Car {
     }
 
     @Override
-    public String toString() {
-        return "Car{" +
-                "fuelType=" + fuelType +
-                ", vehicleCategory=" + vehicleCategory +
-                ", make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", color='" + color + '\'' +
-                ", size=" + size +
-                ", numberOfSeats=" + numberOfSeats +
-                ", numberOfDoors=" + numberOfDoors +
-                ", gearboxType=" + gearboxType +
-                ", AC=" + AC +
-                ", gps=" + gps +
-                ", price=" + price +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Car car = (Car) o;
+
+        return id == car.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return id;
     }
 }

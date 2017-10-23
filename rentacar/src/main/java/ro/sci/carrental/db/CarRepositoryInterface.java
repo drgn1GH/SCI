@@ -1,4 +1,4 @@
-package ro.sci.carrental.repository;
+package ro.sci.carrental.db;
 
 import ro.sci.carrental.model.car.Car;
 
@@ -8,7 +8,7 @@ import java.util.List;
  * Created by tudor on 29.05.2017.
  * Interface of CarRepository
  */
-public interface CarRepositoryInterface<T extends Car> {
+public interface CarRepositoryInterface<T extends Car> extends RepositoryI<T> {
 
     /**
      * Find same make cars in system.
@@ -63,6 +63,6 @@ public interface CarRepositoryInterface<T extends Car> {
      *
      * @return List<Car>
      */
-    List<Car> getAll();
+    List<T> getAll();
 
 }
