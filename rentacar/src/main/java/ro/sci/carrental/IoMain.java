@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Main2 {
+public class IoMain {
     private static Logger logger = Logger.getLogger(Main.class.getName());
 
     public static void main(String[] args) throws InvalidEntityException {

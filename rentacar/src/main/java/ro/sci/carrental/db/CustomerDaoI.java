@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by tudor on 29.05.2017.
  */
-public interface CustomerRepositoryInterface<T extends Customer> extends RepositoryI {
+public interface CustomerDaoI<T extends Customer> extends RepositoryI<T>{
     /**
      * Find the customers with driving licence
      *
@@ -49,5 +49,5 @@ public interface CustomerRepositoryInterface<T extends Customer> extends Reposit
      *
      * @return
      */
-    List<Customer> getAll();
+    List<T> getAll();
 }

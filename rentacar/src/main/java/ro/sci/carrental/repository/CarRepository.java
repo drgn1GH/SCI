@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 /**
  * Created by tudor on 29.05.2017.
- * Create a CarRepository object blueprint
+ * Create a CarDao object blueprint
  */
 public class CarRepository implements CarRepositoryInterface{
     private static final Logger logger = Logger.getLogger(CarRepository.class.getName());

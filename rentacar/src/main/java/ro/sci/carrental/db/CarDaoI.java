@@ -6,9 +6,9 @@ import java.util.List;
 
 /**
  * Created by tudor on 29.05.2017.
- * Interface of CarRepository
+ * Interface of CarDao
  */
-public interface CarRepositoryInterface<T extends Car> extends RepositoryI<T> {
+public interface CarDaoI<T extends Car> extends RepositoryI<T> {
 
     /**
      * Find same make cars in system.

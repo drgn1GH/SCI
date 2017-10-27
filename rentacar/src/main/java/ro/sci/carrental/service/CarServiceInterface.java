@@ -14,7 +14,7 @@ public interface CarServiceInterface<T extends CarRepositoryInterface> {
      * Find same make cars in system.
      *
      * @param make Car make
-     * @return retrieve CarRepository List<Car>
+     * @return retrieve CarDao List<Car>
      */
     List<T> findCarByMake(String make);
 
@@ -23,7 +23,7 @@ public interface CarServiceInterface<T extends CarRepositoryInterface> {
      *
      * @param make  Car make
      * @param model Car model
-     * @return retrieve CarRepository List<Car>
+     * @return retrieve CarDao List<Car>
      */
     List<T> findCarByMakeAndModel(String make, String model);
 
@@ -33,7 +33,7 @@ public interface CarServiceInterface<T extends CarRepositoryInterface> {
      * @param make  Car make
      * @param model Car model
      * @param color Car color
-     * @return retrieve CarRepository List<Car>
+     * @return retrieve CarDao List<Car>
      */
     List<T> findCarByMakeAndModelAndColor(String make, String model, String color);
 }

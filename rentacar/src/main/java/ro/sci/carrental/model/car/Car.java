@@ -16,38 +16,17 @@ public class Car {
     private float size;
     private int numberOfSeats;
 
-    @Override
-    public String toString() {
-        return "Car{" +
-                "id=" + id +
-                ", fuelType=" + fuelType +
-                ", vehicleCategory=" + vehicleCategory +
-                ", gearbox=" + gearbox +
-                ", make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", color='" + color + '\'' +
-                ", size=" + size +
-                ", numberOfSeats=" + numberOfSeats +
-                ", numberOfDoors=" + numberOfDoors +
-                ", gearboxType=" + gearboxType +
-                ", AC=" + AC +
-                ", gps=" + gps +
-                ", price=" + price +
-                ", reserved=" + reserved +
-                '}';
-    }
-
     public void setId(int id) {
         this.id = id;
     }
 
     private int numberOfDoors;
+
     private boolean gearboxType;
     private boolean AC;
     private boolean gps;
     private Price price;
     private boolean reserved;
-
     public Car(int id, String make, String model, String color) {
         this.id = id;
         this.make = make;
@@ -118,8 +97,6 @@ public class Car {
     public void setColor(String color) {
         this.color = color;
     }
-
-    /* getters */
 
     public float getSize() {
         return size;
@@ -198,5 +175,26 @@ public class Car {
     @Override
     public int hashCode() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", fuelType=" + fuelType +
+                ", vehicleCategory=" + vehicleCategory +
+                ", gearbox=" + gearbox +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", size=" + size +
+                ", numberOfSeats=" + numberOfSeats +
+                ", numberOfDoors=" + numberOfDoors +
+                ", gearboxType=" + gearboxType +
+                ", AC=" + AC +
+                ", gps=" + gps +
+                ", price=" + price +
+                ", reserved=" + reserved +
+                '}';
     }
 }

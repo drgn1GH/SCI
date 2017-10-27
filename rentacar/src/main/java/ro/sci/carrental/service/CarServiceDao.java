@@ -1,12 +1,12 @@
 package ro.sci.carrental.service;
 
-import ro.sci.carrental.db.CarRepositoryInterface;
+import ro.sci.carrental.db.CarDaoI;
 import ro.sci.carrental.model.car.Car;
 
 import java.util.List;
 
-public class CarService2 implements CarServiceInterface2<Car>{
-    private CarRepositoryInterface<Car> carRepository;
+public class CarServiceDao implements CarServiceDaoI<Car> {
+    private CarDaoI<Car> carRepository;
 
     @Override
     public void add(Car car) {
@@ -46,7 +46,7 @@ public class CarService2 implements CarServiceInterface2<Car>{
     }
 
     @Override
-    public void setCarRepository(CarRepositoryInterface<Car> carRepositoryInterface) {
-        this.carRepository = carRepositoryInterface;
+    public void setCarRepository(CarDaoI<Car> carDaoI) {
+        this.carRepository = carDaoI;
     }
 }

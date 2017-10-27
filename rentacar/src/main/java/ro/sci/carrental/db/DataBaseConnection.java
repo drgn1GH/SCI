@@ -11,7 +11,6 @@ abstract class DataBaseConnection {
 
         try {
             String url = "jdbc:" + "postgresql" + "://" + "localhost" + ":" + "5432" + "/" + "rentacar" + "?user=" + "lala" + "&password=" + "lala";
-            System.out.println("connection to db ok");
             return DriverManager.getConnection(url);
 
         } catch (SQLException e) {
@@ -28,7 +27,6 @@ abstract class DataBaseConnection {
 
         try {
             Class.forName("org.postgresql.Driver").newInstance();
-            System.out.println("driver found");
 
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
             System.err.println("Can’t load driver. Verify CLASSPATH");

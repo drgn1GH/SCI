@@ -8,6 +8,19 @@ public class Customer {
     private int id;
     private boolean drivingLicence;
     private String name;
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", drivingLicence=" + drivingLicence +
+                ", name='" + name + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                ", customerAddress=" + customerAddress +
+                '}';
+    }
+
     private String mobile;
     private String email;
     private CustomerAddress customerAddress;
@@ -72,14 +85,4 @@ public class Customer {
         this.customerAddress = customerAddress;
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "drivingLicence=" + drivingLicence +
-                ", name='" + name + '\'' +
-                ", mobile='" + mobile + '\'' +
-                ", email='" + email + '\'' +
-                ", customerAddress=" + customerAddress +
-                '}';
-    }
 }
