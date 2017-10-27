@@ -1,0 +1,3 @@
+true,George,george1@gmail.com
+true,John,john2@gmail.com
+false,John,john3@yahoo.com

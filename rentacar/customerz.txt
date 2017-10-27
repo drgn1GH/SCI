@@ -1,0 +1,3 @@
+Customer{drivingLicence=true, name='George', mobile='null', email='george1@gmail.com', customerAddress=null}
+Customer{drivingLicence=true, name='John', mobile='null', email='john2@gmail.com', customerAddress=null}
+Customer{drivingLicence=false, name='John', mobile='null', email='john3@yahoo.com', customerAddress=null}

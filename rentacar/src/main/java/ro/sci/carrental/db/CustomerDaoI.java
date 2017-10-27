@@ -1,4 +1,4 @@
-package ro.sci.carrental.repository;
+package ro.sci.carrental.db;
 
 import ro.sci.carrental.model.customer.Customer;
 
@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by tudor on 29.05.2017.
  */
-public interface CustomerRepositoryInterface<T extends Customer> {
+public interface CustomerDaoI<T extends Customer> extends RepositoryI<T>{
     /**
      * Find the customers with driving licence
      *
@@ -49,5 +49,5 @@ public interface CustomerRepositoryInterface<T extends Customer> {
      *
      * @return
      */
-    List<Customer> getAll();
+    List<T> getAll();
 }
